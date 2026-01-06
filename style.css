@@ -1,6 +1,7 @@
 :root {
   box-sizing: border-box;
-  font-size: clamp(1.125em, 0.5em + 1vw, 1.4em);
+  /* font-size: clamp(1.125em, 0.5em + 1vw, 1.4em); */
+  font-size: clamp(1.0625em, 0.5em + 1vw, 1.4em);
 }
 
 *,
@@ -12,7 +13,8 @@
 }
 
 body {
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 0.02em;
 }
 
 img {
@@ -21,12 +23,26 @@ img {
   height: auto;
 }
 
+.sansita-font {
+  font-family: "Sansita", serif;
+  /* letter-spacing: 0.01em; */
+}
+
 a:hover {
   color: rgb(255, 75, 75);
 }
 
 .nowrap {
   white-space: nowrap;
+}
+
+/* || Header styles for the page || */
+
+.header-container {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
 }
 
 .header {
@@ -79,7 +95,10 @@ a:hover {
   position: absolute;
   list-style-type: none;
   width: 100%;
-  display: none;
+}
+
+.dropdown_list + .dropdown_list {
+  border-top: 1px solid #fff;
 }
 
 @media (min-width: 35em) {
@@ -91,12 +110,11 @@ a:hover {
 }
 
 @media (max-width: 35em) {
-  .main-menu:hover .dropdown {
-    display: block;
-  }
+  /* class to hide the nav when harmbuger button is click.
+  it is use in conjuction with javascript */
 
-  .dropdown_list + .dropdown_list {
-    border-top: 1px solid #fff;
+  .hidden {
+    display: none;
   }
 }
 
@@ -111,6 +129,20 @@ a:hover {
 @media (min-width: 35em) {
   .dropdown_link {
     padding: 0.5em 1.5em;
+  }
+}
+
+/* || End of Header styles|| */
+
+/* || main section of the page|| */
+
+.main-section {
+  margin-top: 73.781px;
+  line-height: 1.5;
+}
+@media (min-width: 35em) {
+  .main-section {
+    margin-top: 6.423em;
   }
 }
 
@@ -141,7 +173,7 @@ a:hover {
   display: flex;
   flex-wrap: wrap;
   gap: 1.2em;
-  padding: 0.7em;
+  padding: 0.7em 1.4em;
 }
 
 @media (min-width: 62em) {
@@ -155,7 +187,6 @@ a:hover {
   background-color: rgb(255, 253, 253);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   padding: 2em 1.5em;
-  /* min-width: 300px; */
   flex: 390px;
 }
 
@@ -167,4 +198,7 @@ a:hover {
 
 .main-title {
   text-transform: capitalize;
+  margin-bottom: 0.88em;
 }
+
+/* || End of main section styles || */

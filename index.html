@@ -1,31 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sansita&display=swap"
+      rel="stylesheet"
+    />
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Responsibe design</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header class="header">
-      <h1 class="company-name header_name">wombat coffee roster</h1>
-      <p class="slogan">we love coffe</p>
+    <header class="header-container">
+      <div class="header">
+        <h1 class="company-name header_name sansita-font">
+          wombat coffee roster
+        </h1>
+        <p class="slogan">we love coffe</p>
+      </div>
+      <nav class="main-menu">
+        <button class="toggle-nav" id="toggle-nav">toggle nav</button>
+        <ul class="dropdown hidden" id="nav">
+          <li class="dropdown_list">
+            <a class="dropdown_link" href="">about</a>
+          </li>
+          <li class="dropdown_list">
+            <a class="dropdown_link" href="">shop</a>
+          </li>
+          <li class="dropdown_list">
+            <a class="dropdown_link" href="">menu</a>
+          </li>
+          <li class="dropdown_list">
+            <a class="dropdown_link" href="">brew</a>
+          </li>
+        </ul>
+      </nav>
     </header>
-    <nav class="main-menu">
-      <button class="toggle-nav">toggle nav</button>
-      <ul class="dropdown">
-        <li class="dropdown_list">
-          <a class="dropdown_link" href="">about</a>
-        </li>
-        <li class="dropdown_list"><a class="dropdown_link" href="">shop</a></li>
-        <li class="dropdown_list"><a class="dropdown_link" href="">menu</a></li>
-        <li class="dropdown_list"><a class="dropdown_link" href="">brew</a></li>
-      </ul>
-    </nav>
 
-    <main>
+    <main class="main-section">
       <section class="hero">
-        <p class="hero-text">
+        <p class="hero-text sansita-font">
           Welcome to
           <span class="company-name">wombat coffee roasters!</span> we are
           passionate about our craft, striving to bring best hand-crafted coffe
@@ -61,5 +85,15 @@
         </div>
       </section>
     </main>
+
+    <script>
+      let toggleNav = document.getElementById("toggle-nav");
+      let nav = document.getElementById("nav");
+
+      toggleNav.addEventListener("click", (e) => {
+        nav.classList.toggle("hidden");
+        e.preventDefault();
+      });
+    </script>
   </body>
 </html>
